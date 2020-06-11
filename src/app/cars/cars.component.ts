@@ -10,7 +10,6 @@ export class CarsComponent implements OnInit {
 
 
   cars = [{ 
-    id:0,
     marque:"BMW",
     immatricule:"i20-1241",
     nombredesiege:"6",
@@ -18,7 +17,6 @@ export class CarsComponent implements OnInit {
     image:"https://www.bmw-m.com/content/dam/bmw/marketBMW_M/common/topics/magazine-article-pool/2019/m-portaits-6/bmw-m4-coupe-yas-marina-blue-nick.f82m-stage.jpg"
   },
   { 
-    id:1,
     marque:"Mercedes",
     immatricule:"A9-1232",
     nombredesiege:"6",
@@ -26,7 +24,6 @@ export class CarsComponent implements OnInit {
     image:"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-mercedes-benz-eqc-4-1547234221.jpg"
   },
   { 
-    id:2,
     marque:"Maserati",
     immatricule:"D91-312",
     nombredesiege:"4",
@@ -39,7 +36,37 @@ export class CarsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  godetails(car){
-    this.router.navigate(["CarDetails",JSON.stringify(car)]);
+  godetails(car){  
+    
+    let ca = 
+    {
+      marque: "",
+      immatricule: "",
+      nombredesiege: "",
+      couleur: "",
+      image: ""
+    };
+
+    ca = car; 
+
+    let i:number = 0;
+    let check:Boolean = true;
+  
+    
+    do{
+
+      if(this.cars[i].immatricule === car.immatricule){
+        ca = this.cars[i];
+        check = false;
+      }
+
+        
+      i++;
+    }while(check && i <= this.cars.length)
+    
+    this.router.navigate(["CarDetails", JSON.stringify(ca)]);
+
   }
-}
+
+  }
+
