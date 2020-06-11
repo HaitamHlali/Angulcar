@@ -1,6 +1,8 @@
-# First page screenshot
-
+# Cars page screenshot
 [![screenshot.jpg](https://i.postimg.cc/RhXNgvdm/screenshot.jpg)](https://postimg.cc/gLLzJF1t)
+
+# Car detail page screenshot
+[![2.jpg](https://i.postimg.cc/Vk7wNDsK/2.jpg)](https://postimg.cc/MnjNP0QB)
 
 # Angulcar
 
