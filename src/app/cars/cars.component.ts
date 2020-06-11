@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cars',
@@ -7,9 +8,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsComponent implements OnInit {
 
-  constructor() { }
+
+  cars = [{ 
+    id:0,
+    marque:"BMW",
+    immatricule:"i20-1241",
+    nombredesiege:"6",
+    couleur:"White",
+    image:"https://www.bmw-m.com/content/dam/bmw/marketBMW_M/common/topics/magazine-article-pool/2019/m-portaits-6/bmw-m4-coupe-yas-marina-blue-nick.f82m-stage.jpg"
+  },
+  { 
+    id:1,
+    marque:"Mercedes",
+    immatricule:"A9-1232",
+    nombredesiege:"6",
+    couleur:"White",
+    image:"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-mercedes-benz-eqc-4-1547234221.jpg"
+  },
+  { 
+    id:2,
+    marque:"Maserati",
+    immatricule:"D91-312",
+    nombredesiege:"4",
+    couleur:"black",
+    image:"https://a211ff96e1c73b59673a-25d5b22cf1e1f9077226fc9508c842c2.ssl.cf1.rackcdn.com/ZAM45VMA9K0341530/b50afd58fc1011702cbc84dd42028939.jpg"
+  }
+]
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
 
+  godetails(car){
+    this.router.navigate(["CarDetails",JSON.stringify(car)]);
+  }
 }

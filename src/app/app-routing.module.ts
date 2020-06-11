@@ -2,7 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
-const routes: Routes = [{ path: 'Cars', loadChildren: () => import('./cars/cars.module').then(m => m.CarsModule) }, { path: 'CarDetails', loadChildren: () => import('./car-details/car-details.module').then(m => m.CarDetailsModule) }];
+const routes: Routes = [
+
+{ path: '', loadChildren: () => import('./cars/cars.module').then(m => m.CarsModule) },
+{ path: 'Cars', loadChildren: () => import('./cars/cars.module').then(m => m.CarsModule) },
+{ path: 'CarDetails', loadChildren: () => import('./car-details/car-details.module').then(m => m.CarDetailsModule) },
+
+{ path: '404', loadChildren: () => import('./erreur/erreur.module').then(m => m.ErreurModule) },
+{ path: '**',
+  redirectTo:'404'
+}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
