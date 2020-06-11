@@ -1,1 +1,53 @@
-<p>car-details works!</p>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+		    <h1 class="display-3">Cars Details</h1>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row mb-3">
+		<div class="col-md-12">
+		    <img [src]="car.image">
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row mb-2">
+		<div class="col-md-8">
+		    <div class="card">
+		        <div class="card-body">
+		            <div class="row">
+            		<div class="col-md-12">
+            		    <h4 class="text-danger">Overview</h4>
+            		    <hr>
+            		</div>
+            	</div>
+                    <div class="row mb-4">
+                    		<div class="col-md-3">
+                    		    <h5 class="text-secondary">MARQUE</h5>
+                    		    <h6>{{car.marque}}</h6>
+                    		</div>
+                    		<div class="col-md-3">
+                    		    <h5 class="text-secondary">IMMATRICULE</h5>
+                    		    <h6>{{car.immatricule}}</h6>
+                    		</div>
+                    		<div class="col-md-3">
+                    		    <h5 class="text-secondary">Nombre de siege</h5>
+                    		    <h6>{{car.nombredesiege}}</h6>
+                    		</div>
+                    		<div class="col-md-3">
+                    		    <h5 class="text-secondary">COULEUR</h5>
+                    		    <h6>{{car.couleur}}</h6>
+                    		</div>
+                    	</div>
+		        </div>
+		    </div>
+        </div>
+    </div>
+</div>

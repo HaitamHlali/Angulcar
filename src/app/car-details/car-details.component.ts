@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-car-details',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarDetailsComponent implements OnInit {
 
-  constructor() { }
+  car = 
+  {
+    marque: "",
+    immatricule: "",
+    nombredesiege: "",
+    couleur: "",
+    image: ""
+  };
+  constructor(private activetedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-  }
+    this.car = JSON.parse(this.activetedRoute.snapshot.params.car);
+  } 
+
+
 
 }
